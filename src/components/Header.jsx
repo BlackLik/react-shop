@@ -8,7 +8,7 @@ function Header() {
           </a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
-              <a href="https://github.com/BlackLik/react-shop">Repo</a>
+              <a href="https://github.com/BlackLik/react-shop/">Repo</a>
             </li>
           </ul>
         </div>
