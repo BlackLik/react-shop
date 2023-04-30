@@ -5,7 +5,7 @@ function Footer() {
         <div className="container">
           @ {new Date().getFullYear()} Copyright Text
           <a
-            href="https://github.com/BlackLik/react-movies/"
+            href="https://github.com/BlackLik/react-shop"
             className="grey-text text-lighten-4 right"
           >
             Repo
