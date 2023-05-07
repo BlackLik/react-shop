@@ -1,23 +1,28 @@
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import { ShopContext } from '../context';
 
 function BacketItem(props) {
-  const {
-    id,
-    name,
-    price,
-    quantity,
-    removeFromBasket,
-    incQuantity,
-    decQuantity,
-  } = props;
+  const { id, name, price, quantity } = props;
+
+  const { removeFromBasket, incQuantity, decQuantity } = useContext(
+    ShopContext,
+  );
+
   return (
     <li className='collection-item' id={id}>
       {name}{' '}
-      <i className='material-icons basket-quantity' onClick={() => decQuantity(id)}>
+      <i
+        className='material-icons basket-quantity'
+        onClick={() => decQuantity(id)}
+      >
         remove
       </i>{' '}
       x{quantity}{' '}
-      <i className='material-icons basket-quantity' onClick={() => incQuantity(id)}>
+      <i
+        className='material-icons basket-quantity'
+        onClick={() => incQuantity(id)}
+      >
         add
       </i>{' '}
       = {price}
@@ -36,9 +41,6 @@ BacketItem.propTypes = {
   name: PropTypes.string,
   price: PropTypes.number,
   quantity: PropTypes.number,
-  removeFromBasket: PropTypes.func,
-  incQuantity: PropTypes.func,
-  decQuantity: PropTypes.func,
 };
 
 export default BacketItem;

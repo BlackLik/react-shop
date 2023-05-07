@@ -1,22 +1,19 @@
-import PropTypes from "prop-types";
+import { ShopContext } from '../context';
+import { useContext } from 'react';
 
-function Cart(props) {
-  const quantity = props.quantity;
-  const handleBasketShow = props.handleBasketShow;
+function Cart() {
+  const { order, handleBasketShow } = useContext(ShopContext);
+
+  const quantity = order.length;
   return (
     <button
-      className="cart blue darken-4 white-text"
+      className='cart blue darken-4 white-text'
       onClick={() => handleBasketShow()}
     >
-      <i className="material-icons">shopping_cart</i>
-      {quantity ? <span className="cart-quantity ">{quantity}</span> : null}
+      <i className='material-icons'>shopping_cart</i>
+      {quantity ? <span className='cart-quantity '>{quantity}</span> : null}
     </button>
   );
 }
-
-Cart.propTypes = {
-  quantity: PropTypes.number.isRequired,
-  handleBasketShow: PropTypes.func,
-};
 
 export default Cart;

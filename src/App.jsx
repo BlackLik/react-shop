@@ -1,5 +1,5 @@
-import "./App.css";
-import { Header, Footer, Shop } from "./components";
+import './App.css';
+import { Header, Footer, Shop } from './components';
 
 function App() {
   return (
